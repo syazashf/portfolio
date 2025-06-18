@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nur Syaza Alya Sharif</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.light-mode {
+      background-color: #f2f4f8;
+      color: #000;
+    }
+    body.light-mode p {
+      color: #222;
+    }
+
+    body.dark-mode {
+      background-color: #212020;
+      color: #f0f0f0;
+    }
+    body.dark-mode p {
+      color: #f0f0f0;
+    }
+
+    .wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    header {
+      background-color: rgb(255, 255, 255);
+      padding: 1rem;
+      color: #ff69b4;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    nav a {
+      margin: 0 10px;
+      color: rgb(255, 66, 138);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .sun-icon {
+      cursor: pointer;
+      font-size: 1.2rem;
+      margin-left: 15px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+      background: #ff9fcf;
+      color: rgb(255, 255, 255);
+    }
+
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    section {
+      padding: 40px 20px;
+    }
+
+    .content-wrapper {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h3 {
+      font-size: 24px;
+      border-bottom: 2px solid #ff69b4;
+      padding-bottom: 10px;
+      color: #ff69b4;
+    }
+
+    .download-button,
+    .view-resume-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #ff69b4;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .download-button:hover,
+    .view-resume-button:hover {
+      background-color: #ff1493;
+    }
+
+    h2 {
+      color: #ffffff;
+      font-size: 2rem;
+      margin-top: 20px;
+    }
+
+    p {
+      color: #252020;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        gap: 10px;
+        padding-top: 10px;
+      }
+
+      .profile-img {
+        width: 120px;
+        height: 120px;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const sunIcon = document.querySelector(".sun-icon");
+      const body = document.body;
+
+      function setTheme(theme) {
+        if (theme === "light") {
+          body.classList.add("light-mode");
+          body.classList.remove("dark-mode");
+          sunIcon.textContent = "🌙";
+        } else {
+          body.classList.add("dark-mode");
+          body.classList.remove("light-mode");
+          sunIcon.textContent = "🌞";
+        }
+      }
+
+      const currentTheme = localStorage.getItem("theme") || "light";
+      setTheme(currentTheme);
+
+      sunIcon.addEventListener("click", () => {
+        const newTheme = body.classList.contains("light-mode") ? "dark" : "light";
+        setTheme(newTheme);
+        localStorage.setItem("theme", newTheme);
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <div class="navbar">
+        <h1>Nur Syaza Alya Sharif</h1>
+        <nav>
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#project">Projects</a>
+          <a href="#contact">Contact</a>
+          <a href="resume.html">Resume</a>
+          <span class="sun-icon">🌙</span>
+        </nav>
+      </div>
+    </header>
+
+    <section id="home" class="hero">
+      <div class="container">
+        <img src="profile1.jpeg" alt="Nur Syaza Alya Sharif" class="profile-img" />
+        <h2>Hello, I'm Nur Syaza Alya Sharif</h2>
+        <p>Currently pursuing a Diploma in Computer Science at Universiti Teknologi Mara (UiTM)</p>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="content-wrapper">
+        <h3>About Me</h3>
+        <p>
+          Skilled in HTML, CSS, JavaScript, C++, and Java, with a strong understanding of both front-end and back-end development principles. Passionate about building user-friendly web applications and continuously learning new technologies.
+        </p>
+        <a href="resume.html" class="view-resume-button">View My Resume</a>
+      </div>
+    </section>
+
+    <section id="project">
+  <div class="content-wrapper">
+    <h3>Projects</h3>
+
+    <p><strong>Portfolio Website</strong> – A personal website built with HTML, CSS, and JavaScript.</p>
+
+    <h4 style="color:#ff69b4; margin-top: 30px;">Upcoming Project</h4>
+    <div style="margin-top: 10px;">
+      <p><strong>Final Year Project</strong></p>
+      <img src="final.png" alt="Final Year Project Preview" style="max-width:30%; height:auto; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+    </div>
+
+    <h4 style="color:#ff69b4; margin-top: 30px;">Side Projects</h4>
+    <div style="margin-top: 10px;">
+      <p><strong>BMI Calculator</strong></p>
+      <img src="bmi.png" alt="BMI Calculator" style="max-width:30%; height:auto; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+    </div>
+
+    <div style="margin-top: 20px;">
+      <p><strong>Simple Arithmetic Calculator</strong></p>
+      <img src="arithmetic.png" alt="Simple Calculator" style="max-width:30%; height:auto; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+    </div>
+  </div>
+</section>
+
+
+    <section id="contact">
+      <div class="content-wrapper">
+        <h3>Contact</h3>
+        <p>
+          Email: syazasharif7@gmail.com<br>
+          Phone: +60 19-940 7553<br>
+          LinkedIn: https://www.linkedin.com/in/syazasharif/
+        </p>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
